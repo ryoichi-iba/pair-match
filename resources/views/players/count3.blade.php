@@ -9,29 +9,29 @@
     @csrf
   <div class="form-group col-6">
     <label for="player1">1人目</label>
-    <input type="text" class="form-control" placeholder="佐藤" name="pair1[]">
+    <input type="text" class="form-control" name="pair1[]" value="1" required>
   </div>
   <div class="form-group col-6">
     <label for="player2">２人目</label>
-    <input type="text" class="form-control" placeholder="田中" name="pair1[]">
+    <input type="text" class="form-control" name="pair1[]" value="2" required>
   </div>
 
    <div class="form-group col-6">
     <label for="player1">1人目</label>
-    <input type="text" class="form-control" placeholder="佐藤" name="pair2[]">
+    <input type="text" class="form-control" name="pair2[]" value="3" required>
   </div>
   <div class="form-group col-6">
     <label for="player2">２人目</label>
-    <input type="text" class="form-control" placeholder="田中" name="pair2[]">
+    <input type="text" class="form-control" name="pair2[]" value="4" required>
   </div>
 
    <div class="form-group col-6">
     <label for="player1">1人目</label>
-    <input type="text" class="form-control" placeholder="佐藤" name="pair3[]">
+    <input type="text" class="form-control" name="pair3[]" value="5" required>
   </div>
   <div class="form-group col-6">
     <label for="player2">２人目</label>
-    <input type="text" class="form-control" placeholder="田中" name="pair3[]">
+    <input type="text" class="form-control" name="pair3[]" value="6" required>
   </div>
 
     <input type="hidden" value="3" name="count">

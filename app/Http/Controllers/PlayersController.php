@@ -11,7 +11,7 @@ class PlayersController extends Controller
         $CourtCount = intval($request->input('courts'));
         $playersCount = intval($request->input('players'));
 
-        if($playersCount === 3  && $CourtCount === 1) {
+        if($playersCount === 3 ) {
             return view('players.count3');
         }
 
