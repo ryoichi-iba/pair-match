@@ -9,14 +9,11 @@ use Illuminate\Http\Request;
 class MatchController extends Controller
 {
     public function create(Request $request) {
-        if(intval($request->count) === 3) {
 
-            $players = [];
-            $players = array_merge($request->pair1, $request->pair2, $request->pair3);
-
-            $length = 10;
-            $token = substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyz', $length)), 0, $length);
-
+        for ($i = 0; $i < $request->pairCount; $i++) {
+            $players[] = $request->{"pair" . $i }[0];
+            $players[] = $request->{"pair" . $i }[1];
+        }
             foreach ($players  as $key => $playerName) {
                 $player = new Player;
                 $player->name = $playerName;
@@ -34,6 +31,6 @@ class MatchController extends Controller
             }
 
             return view('/match/table3');
-        }
+        
 }
     }

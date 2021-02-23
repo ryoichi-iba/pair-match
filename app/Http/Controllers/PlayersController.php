@@ -8,12 +8,9 @@ class PlayersController extends Controller
 {
 
     public function create(Request $request) {
-        $CourtCount = intval($request->input('courts'));
-        $playersCount = intval($request->input('players'));
+        $pairCount = intval($request->input('players'));
 
-        if($playersCount === 3 ) {
-            return view('players.count3');
-        }
+            return view('players.input', compact('pairCount'));
 
     }
 
