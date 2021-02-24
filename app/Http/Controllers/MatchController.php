@@ -13,6 +13,8 @@ class MatchController extends Controller
         for ($i = 0; $i < $request->pairCount; $i++) {
             $players[] = $request->{"pair" . $i }[0];
             $players[] = $request->{"pair" . $i }[1];
+
+            
         }
             foreach ($players  as $key => $playerName) {
                 $player = new Player;
@@ -25,12 +27,21 @@ class MatchController extends Controller
                     $pair->save();
                 }
                 if ($key % 2 != 0) {
-                $pair->player_id2 = $player->id;
+                    $pair->player_id2 = $player->id;
                     $pair->save();
                 }
             }
 
-            return view('/match/table3');
+            if ($request->pairCount == 3){
+                return view('/match/table3', with([
+                    
+                        'pair1' => $request->pair0,
+                        'pair2' => $request->pair1,
+                        'pair3' => $request->pair2,
+                        ]));
+
+            }
+
         
-}
     }
+}
