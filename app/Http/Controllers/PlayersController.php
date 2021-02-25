@@ -9,8 +9,8 @@ class PlayersController extends Controller
 
     public function create(Request $request) {
         $pairCount = intval($request->input('players'));
-
-            return view('players.input', compact('pairCount'));
+        $tournamentId = $request->tournamentId;
+            return view('players.input', compact('pairCount', 'tournamentId'));
 
     }
 

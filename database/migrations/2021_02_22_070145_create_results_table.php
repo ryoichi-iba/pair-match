@@ -17,8 +17,8 @@ class CreateResultsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('pair1_id');
             $table->unsignedBigInteger('pair2_id');
-            $table->integer('pair1_score');
-            $table->integer('pair2_score');
+            $table->integer('pair1_score')->default(0);
+            $table->integer('pair2_score')->default(0);
             $table->unsignedBigInteger('tournament_id');
             $table->timestamps();
         });

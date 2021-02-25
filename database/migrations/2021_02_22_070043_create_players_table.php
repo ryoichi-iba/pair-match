@@ -16,7 +16,7 @@ class CreatePlayersTable extends Migration
         Schema::create('players', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            // $table->text('pair_token');
+            $table->unsignedBigInteger('tournament_id');
             $table->timestamps();
         });
     }
